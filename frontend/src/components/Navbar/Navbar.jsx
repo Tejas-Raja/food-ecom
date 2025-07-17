@@ -1,4 +1,4 @@
-import React, { Profiler, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './navbar.css'
 import { assets } from '../../assets/assets'
 import { Link, useNavigate } from 'react-router-dom'
@@ -11,7 +11,7 @@ const navbar = ({ setShowLogin }) => {
 
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -38,7 +38,7 @@ const navbar = ({ setShowLogin }) => {
           : <div className='navbar-profile'>
             <img src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown">
-              <li><img src={assets.bag_icon} alt="" /><p>orders</p></li>
+              <li onClick={() => navigate('/myorders')}><img src={assets.bag_icon} alt="" /><p>orders</p></li>
               <hr />
               <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>logout</p></li>
             </ul>
