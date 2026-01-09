@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 
 
-const navbar = ({ setShowLogin }) => {
+const Navbar = ({ setShowLogin }) => {
 
   const [menu, setmenu] = useState("home");
 
@@ -49,4 +49,4 @@ const navbar = ({ setShowLogin }) => {
   )
 }
 
-export default navbar
+export default Navbar
